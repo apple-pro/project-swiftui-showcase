@@ -13,11 +13,13 @@ struct LayoutPriorityExperiment: View {
         HStack {
             Text("This is some great and long text")
                 .font(.largeTitle)
+                .background(Color.white)
             
             Spacer()
             
             Text("This is some great and long text")
-                .font(.largeTitle).layoutPriority(1.5)
+                .font(.largeTitle)
+                .layoutPriority(1.5)
         }
     }
 }

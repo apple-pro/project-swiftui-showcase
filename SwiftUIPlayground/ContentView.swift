@@ -51,7 +51,7 @@ struct DetailView: View {
 let demoViews = [
     "No Image Avatar",
     "HStack",
-    "AnotherReallyAwesomeView"
+    "Layout Prio"
 ]
 
 struct ConditionalView: View {
@@ -70,7 +70,7 @@ struct ConditionalView: View {
             } else if demoViews[1] == viewName {
                 HStackExperiment()
             } else if demoViews[2] == viewName {
-                AnotherReallyAwesomeView()
+                LayoutPriorityExperiment()
             } else {
                 NoImageAvatar()
             }

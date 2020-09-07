@@ -15,7 +15,7 @@
 		F02AD50225063A4F00FE75E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F02AD50025063A4F00FE75E1 /* LaunchScreen.storyboard */; };
 		F02AD50B25063B0100FE75E1 /* NoImageAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AD50A25063B0100FE75E1 /* NoImageAvatar.swift */; };
 		F02AD50F2506477500FE75E1 /* HStackExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AD50E2506477500FE75E1 /* HStackExperiment.swift */; };
-		F02AD5112506478F00FE75E1 /* AnotherReallyAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AD5102506478F00FE75E1 /* AnotherReallyAwesomeView.swift */; };
+		F02AD5112506478F00FE75E1 /* LayoutPriorityExperiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02AD5102506478F00FE75E1 /* LayoutPriorityExperiment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		F02AD50325063A4F00FE75E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F02AD50A25063B0100FE75E1 /* NoImageAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageAvatar.swift; sourceTree = "<group>"; };
 		F02AD50E2506477500FE75E1 /* HStackExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackExperiment.swift; sourceTree = "<group>"; };
-		F02AD5102506478F00FE75E1 /* AnotherReallyAwesomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherReallyAwesomeView.swift; sourceTree = "<group>"; };
+		F02AD5102506478F00FE75E1 /* LayoutPriorityExperiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityExperiment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			children = (
 				F02AD50A25063B0100FE75E1 /* NoImageAvatar.swift */,
 				F02AD50E2506477500FE75E1 /* HStackExperiment.swift */,
-				F02AD5102506478F00FE75E1 /* AnotherReallyAwesomeView.swift */,
+				F02AD5102506478F00FE75E1 /* LayoutPriorityExperiment.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 				F02AD4F625063A4E00FE75E1 /* AppDelegate.swift in Sources */,
 				F02AD50F2506477500FE75E1 /* HStackExperiment.swift in Sources */,
 				F02AD50B25063B0100FE75E1 /* NoImageAvatar.swift in Sources */,
-				F02AD5112506478F00FE75E1 /* AnotherReallyAwesomeView.swift in Sources */,
+				F02AD5112506478F00FE75E1 /* LayoutPriorityExperiment.swift in Sources */,
 				F02AD4F825063A4E00FE75E1 /* SceneDelegate.swift in Sources */,
 				F02AD4FA25063A4E00FE75E1 /* ContentView.swift in Sources */,
 			);
