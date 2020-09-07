@@ -8,11 +8,6 @@
 
 import SwiftUI
 
-let demoViews = [
-    "NoImageAvatar",
-    "B"
-]
-
 struct ContentView: View {
 
     var body: some View {
@@ -50,6 +45,30 @@ struct DetailView: View {
         Group {
             ConditionalView(viewName: viewLabel)
         }.navigationBarTitle(Text(viewLabel))
+    }
+}
+
+let demoViews = [
+    "NoImageAvatar",
+    "SomeReallyAwesomeView",
+    "AnotherReallyAwesomeView"
+]
+
+struct ConditionalView: View {
+    
+    let viewName: String
+    
+    @ViewBuilder
+    var body: some View {
+        if viewName == "NoImageAvatar" {
+            NoImageAvatar()
+        } else if viewName == "SomeReallyAwesomeView" {
+            SomeReallyAwesomeView()
+        } else if viewName == "AnotherReallyAwesomeView" {
+            AnotherReallyAwesomeView()
+        } else {
+            Text("Unknown View: \(viewName)")
+        }
     }
 }
 

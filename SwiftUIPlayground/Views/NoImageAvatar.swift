@@ -17,7 +17,7 @@ struct NoImageAvatar: View {
             .padding()
             .background(Color.red)
             .clipShape(Circle())
-            .padding()
+            .padding(2)
             .background(Circle())
     }
 }
