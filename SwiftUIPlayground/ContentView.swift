@@ -58,17 +58,24 @@ struct ConditionalView: View {
     
     let viewName: String
     
-    @ViewBuilder
+    //you can use conditionals and return any kind of view
+    //normally swift ui will not allow you to do this
+    //a better workaround is just to wrap the conditional view in some
+    //kind of layout view (V/Z/HStack)
+    //@ViewBuilder
     var body: some View {
-        if viewName == "NoImageAvatar" {
-            NoImageAvatar()
-        } else if viewName == "SomeReallyAwesomeView" {
-            SomeReallyAwesomeView()
-        } else if viewName == "AnotherReallyAwesomeView" {
-            AnotherReallyAwesomeView()
-        } else {
-            Text("Unknown View: \(viewName)")
+        VStack {
+            if demoViews[0] == viewName {
+                NoImageAvatar()
+            } else if demoViews[1] == viewName {
+                SomeReallyAwesomeView()
+            } else if demoViews[2] == viewName {
+                AnotherReallyAwesomeView()
+            } else {
+                NoImageAvatar()
+            }
         }
+        
     }
 }
 
