@@ -49,8 +49,8 @@ struct DetailView: View {
 }
 
 let demoViews = [
-    "NoImageAvatar",
-    "SomeReallyAwesomeView",
+    "No Image Avatar",
+    "HStack",
     "AnotherReallyAwesomeView"
 ]
 
@@ -64,17 +64,19 @@ struct ConditionalView: View {
     //kind of layout view (V/Z/HStack)
     //@ViewBuilder
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 50) {
             if demoViews[0] == viewName {
                 NoImageAvatar()
             } else if demoViews[1] == viewName {
-                SomeReallyAwesomeView()
+                HStackExperiment()
             } else if demoViews[2] == viewName {
                 AnotherReallyAwesomeView()
             } else {
                 NoImageAvatar()
             }
-        }
+        }.frame(width: 300, height: 300, alignment: .center)
+            .background(Color.gray) //background could be a view or a color (so we cant
+                //use the enum shortcuts for color here
         
     }
 }
