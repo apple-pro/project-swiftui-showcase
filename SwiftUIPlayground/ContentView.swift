@@ -8,64 +8,48 @@
 
 import SwiftUI
 
-private let dateFormatter: DateFormatter = {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateStyle = .medium
-    dateFormatter.timeStyle = .medium
-    return dateFormatter
-}()
+let demoViews = [
+    "NoImageAvatar",
+    "B"
+]
 
 struct ContentView: View {
-    @State private var dates = [Date]()
 
     var body: some View {
         NavigationView {
-            MasterView(dates: $dates)
-                .navigationBarTitle(Text("Master"))
-                .navigationBarItems(
-                    leading: EditButton(),
-                    trailing: Button(
-                        action: {
-                            withAnimation { self.dates.insert(Date(), at: 0) }
-                        }
-                    ) {
-                        Image(systemName: "plus")
-                    }
-                )
-            DetailView()
+            
+            MasterView()
+                .navigationBarTitle(Text("Projects"))
+            
+            DetailView(viewLabel: demoViews[0])
+            
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 
 struct MasterView: View {
-    @Binding var dates: [Date]
-
+    
     var body: some View {
         List {
-            ForEach(dates, id: \.self) { date in
+            ForEach(demoViews, id: \.self) { demoView in
                 NavigationLink(
-                    destination: DetailView(selectedDate: date)
+                    destination: DetailView(viewLabel: demoView)
                 ) {
-                    Text("\(date, formatter: dateFormatter)")
+                    Text(demoView)
                 }
-            }.onDelete { indices in
-                indices.forEach { self.dates.remove(at: $0) }
             }
         }
     }
 }
 
 struct DetailView: View {
-    var selectedDate: Date?
+    
+    let viewLabel: String
 
     var body: some View {
         Group {
-            if selectedDate != nil {
-                Text("\(selectedDate!, formatter: dateFormatter)")
-            } else {
-                Text("Detail view content goes here")
-            }
-        }.navigationBarTitle(Text("Detail"))
+            ConditionalView(viewName: viewLabel)
+        }.navigationBarTitle(Text(viewLabel))
     }
 }
 
