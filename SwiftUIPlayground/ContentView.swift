@@ -16,7 +16,7 @@ struct ContentView: View {
             MasterView()
                 .navigationBarTitle(Text("Projects"))
             
-            DetailView(viewLabel: demoViews[0])
+            DetailView(viewLabel: demoViews[3])
             
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
@@ -51,7 +51,8 @@ struct DetailView: View {
 let demoViews = [
     "No Image Avatar",
     "HStack",
-    "Layout Prio"
+    "Layout Prio",
+    "List and Navigation"
 ]
 
 struct ConditionalView: View {
@@ -71,10 +72,12 @@ struct ConditionalView: View {
                 HStackExperiment()
             } else if demoViews[2] == viewName {
                 LayoutPriorityExperiment()
+            } else if demoViews[3] == viewName {
+                ListAndNavigation()
             } else {
                 NoImageAvatar()
             }
-        }.frame(width: 300, height: 300, alignment: .center)
+        }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             .background(Color.gray) //background could be a view or a color (so we cant
                 //use the enum shortcuts for color here
         
