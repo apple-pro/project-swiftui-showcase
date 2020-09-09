@@ -12,12 +12,12 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            
+
             MasterView()
                 .navigationBarTitle(Text("Projects"))
-            
+
             DetailView(viewLabel: demoViews[3])
-            
+
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }

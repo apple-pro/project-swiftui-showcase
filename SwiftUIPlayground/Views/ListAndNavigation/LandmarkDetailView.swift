@@ -10,32 +10,35 @@ import SwiftUI
 import MapKit
 
 struct LandmarkDetailView: View {
+    
+    var landmark: Landmark
+    
     var body: some View {
         VStack {
             MapView()
                 .edgesIgnoringSafeArea(.top)
                 .frame(height: 300)
 
-            CircleImage()
+            CircleImage(image: landmark.image)
                 .offset(y: -130)
                 .padding(.bottom, -130)
 
             VStack(alignment: .leading) {
-                Text("Turtle Rock")
+                Text(landmark.name)
                     .font(.title)
 
                 HStack(alignment: .top) {
-                    Text("Joshua Tree National Park")
+                    Text(landmark.park)
                         .font(.subheadline)
                     Spacer()
-                    Text("California")
+                    Text(landmark.state)
                         .font(.subheadline)
                 }
             }
             .padding()
 
             Spacer()
-        }
+        }.navigationBarTitle(Text(landmark.name), displayMode: .inline)
     }
 }
 
@@ -54,8 +57,10 @@ struct MapView: UIViewRepresentable {
 }
 
 struct CircleImage: View {
+    var image: Image
+    
     var body: some View {
-        Image("turtlerock")
+        image
             .clipShape(Circle())
             .overlay(
                 Circle().stroke(Color.white, lineWidth: 4))
@@ -65,6 +70,6 @@ struct CircleImage: View {
 
 struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        LandmarkDetailView()
+        LandmarkDetailView(landmark: landmarkData[0])
     }
 }

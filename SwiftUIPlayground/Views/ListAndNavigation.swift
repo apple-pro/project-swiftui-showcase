@@ -12,10 +12,14 @@ import SwiftUI
 struct ListAndNavigation: View {
     
     var body: some View {
-        List(landmarkData, id: \.id) { landmark in
-            LandmarkRow(landmark: landmark)
+        NavigationView {
+            List(landmarkData) { landmark in
+                NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
+                    LandmarkRow(landmark: landmark)
+                }
+            }
+            .navigationBarTitle(Text("Landmarks"))
         }
-        .navigationBarTitle(Text("Landmarks"))
     }
 }
 
