@@ -11,11 +11,24 @@ import SwiftUI
 
 struct ListAndNavigation: View {
     
+    //https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-environmentobject-to-share-data-between-views
+    //Data is shared between apps
+    @EnvironmentObject var userData: UserData
+    
     var body: some View {
         NavigationView {
-            List(landmarkData) { landmark in
-                NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
-                    LandmarkRow(landmark: landmark)
+            List {
+                Toggle(isOn: $userData.showFavoritesOnly) {
+                    Text("Favorites only")
+                }
+                
+                ForEach(landmarkData) { landmark in
+                    if !self.userData.showFavoritesOnly {
+                        NavigationLink(destination: LandmarkDetailView(landmark: landmark)) {
+                            LandmarkRow(landmark: landmark)
+                        }
+                        
+                    }
                 }
             }
             .navigationBarTitle(Text("Landmarks"))
@@ -23,10 +36,15 @@ struct ListAndNavigation: View {
     }
 }
 
+final class UserData: ObservableObject  {
+    @Published var showFavoritesOnly = false
+    @Published var landmarks = landmarkData
+}
+
 struct LandmarkRow: View {
     
     var landmark: Landmark
-
+    
     var body: some View {
         HStack {
             landmark.image
@@ -43,11 +61,11 @@ struct GridSearch_Previews: PreviewProvider {
         ListAndNavigation()
         //LandmarkRow(landmark: landmarkData[2])
         
-//        Group {
-//            LandmarkRow(landmark: landmarkData[0])
-//                .previewLayout(.fixed(width: 300, height: 70))
-//            LandmarkRow(landmark: landmarkData[1])
-//                .previewLayout(.fixed(width: 300, height: 70))
-//        }
+        //        Group {
+        //            LandmarkRow(landmark: landmarkData[0])
+        //                .previewLayout(.fixed(width: 300, height: 70))
+        //            LandmarkRow(landmark: landmarkData[1])
+        //                .previewLayout(.fixed(width: 300, height: 70))
+        //        }
     }
 }
