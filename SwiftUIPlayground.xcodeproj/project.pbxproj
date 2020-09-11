@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0084DBD250B8FD500275B9F /* Forms.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0084DBC250B8FD500275B9F /* Forms.swift */; };
 		F0221C8B2508D1C700733DF2 /* ListAndNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0221C8A2508D1C700733DF2 /* ListAndNavigation.swift */; };
 		F0221C9A2508E6B300733DF2 /* rainbowlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0221C8D2508E6B200733DF2 /* rainbowlake.jpg */; };
 		F0221C9B2508E6B300733DF2 /* chincoteague.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F0221C8E2508E6B200733DF2 /* chincoteague.jpg */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F0084DBC250B8FD500275B9F /* Forms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forms.swift; sourceTree = "<group>"; };
 		F0221C8A2508D1C700733DF2 /* ListAndNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListAndNavigation.swift; sourceTree = "<group>"; };
 		F0221C8D2508E6B200733DF2 /* rainbowlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rainbowlake.jpg; sourceTree = "<group>"; };
 		F0221C8E2508E6B200733DF2 /* chincoteague.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chincoteague.jpg; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				F02AD5102506478F00FE75E1 /* LayoutPriorityExperiment.swift */,
 				F0221C8A2508D1C700733DF2 /* ListAndNavigation.swift */,
 				F0221CA72508EA1900733DF2 /* ListAndNavigation */,
+				F0084DBC250B8FD500275B9F /* Forms.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02AD4F625063A4E00FE75E1 /* AppDelegate.swift in Sources */,
+				F0084DBD250B8FD500275B9F /* Forms.swift in Sources */,
 				F02AD50F2506477500FE75E1 /* HStackExperiment.swift in Sources */,
 				F0221CAB2508EC9600733DF2 /* LandmarkDetailView.swift in Sources */,
 				F02AD50B25063B0100FE75E1 /* NoImageAvatar.swift in Sources */,

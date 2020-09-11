@@ -52,7 +52,8 @@ let demoViews = [
     "No Image Avatar",
     "HStack",
     "Layout Prio",
-    "List and Navigation"
+    "List and Navigation",
+    "Forms"
 ]
 
 struct ConditionalView: View {
@@ -74,6 +75,8 @@ struct ConditionalView: View {
                 LayoutPriorityExperiment()
             } else if demoViews[3] == viewName {
                 ListAndNavigation()
+            } else if demoViews[4] == viewName {
+                Forms()
             } else {
                 NoImageAvatar()
             }

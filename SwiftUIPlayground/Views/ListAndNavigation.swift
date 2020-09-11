@@ -13,7 +13,9 @@ struct ListAndNavigation: View {
     
     //https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-environmentobject-to-share-data-between-views
     //Data is shared between apps
-    @EnvironmentObject var userData: UserData
+    //@EnvironmentObject var userData: UserData
+    
+    @ObservedObject var userData: UserData = UserData()
     
     var body: some View {
         NavigationView {
