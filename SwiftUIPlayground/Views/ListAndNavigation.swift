@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct ListAndNavigation: View {
     
     //https://www.hackingwithswift.com/quick-start/swiftui/how-to-use-environmentobject-to-share-data-between-views
