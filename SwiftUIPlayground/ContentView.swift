@@ -16,7 +16,7 @@ struct ContentView: View {
             MasterView()
                 .navigationBarTitle(Text("Projects"))
 
-            DetailView(viewLabel: demoViews[3])
+            DetailView(viewLabel: demoViews[4])
 
         }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
