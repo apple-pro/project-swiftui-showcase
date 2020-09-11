@@ -32,6 +32,8 @@ struct ListAndNavigation: View {
                 }
             }
             .navigationBarTitle(Text("Landmarks"))
+            
+            LandmarkDetailView(landmark: landmarkData[0])
         }
     }
 }
