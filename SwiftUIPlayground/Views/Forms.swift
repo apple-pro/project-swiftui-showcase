@@ -18,6 +18,18 @@ final class Order: ObservableObject {
     @Published var specialOrder = false
     @Published var extraFrosting = false
     @Published var addSprinkles = false
+    
+    @Published var name = ""
+    @Published var streetAddress = ""
+    @Published var city = ""
+    @Published var zip = ""
+    
+    var isValid: Bool {
+        return !(name.isEmpty
+            || streetAddress.isEmpty
+            || city.isEmpty
+            || zip.isEmpty)
+    }
 }
 
 struct Forms: View {
@@ -25,7 +37,7 @@ struct Forms: View {
     @ObservedObject var order = Order()
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             Form {
                 
                 Section {
@@ -57,9 +69,27 @@ struct Forms: View {
                     
                 }
                 
+                Section {
+                    TextField("Name", text: $order.name)
+                    TextField("Street Address", text: $order.streetAddress)
+                    TextField("City", text: $order.city)
+                    TextField("ZIP", text: $order.zip)
+                }
+                
+                Section {
+                    Button(action: {
+                        
+                    }) {
+                        HStack {
+                            Image(systemName: "cart")
+                            Text("Buy Now")
+                        }
+                    }
+                }.disabled(!order.isValid)
+                
                 
             }.navigationBarTitle(Text("Cupcake Corner"))
-        }
+        //}
     }
 }
 
