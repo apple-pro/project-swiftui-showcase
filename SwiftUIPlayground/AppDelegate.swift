@@ -15,6 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //a hack for swiftui nav bar
+        //https://medium.com/@francisco.gindre/customizing-swiftui-navigation-bar-8369d42b8805
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .blue
+        
+        let attrys: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white
+        ]
+        
+        appearance.largeTitleTextAttributes = attrys
+        
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        
         return true
     }
 
